@@ -1,7 +1,8 @@
 import { IsInt, IsString, IsDateString, IsOptional } from 'class-validator';
 
-export class CreateReminderDto {
+export class UpdateReminderDto {
   @IsString()
+  @IsOptional()
   title: string;
 
   @IsString()
@@ -9,6 +10,7 @@ export class CreateReminderDto {
   description: string;
 
   @IsDateString()
+  @IsOptional()
   alarm_date: Date;
 
   @IsInt()

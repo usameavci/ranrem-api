@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { AppService } from './app.service';
+import { Reminder } from './reminders/reminder.entity';
+import { ReminderModule } from './reminders/reminders.module';
 import { AppController } from './app.controller';
 
 @Module({
@@ -13,11 +14,11 @@ import { AppController } from './app.controller';
       username: 'homestead',
       password: 'secret',
       database: 'ranrem_api',
-      entities: [],
+      entities: [Reminder],
       synchronize: true,
     }),
+    ReminderModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

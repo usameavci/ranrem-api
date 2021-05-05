@@ -8,12 +8,12 @@ export class Reminder {
   @Column()
   title: string;
 
-  @Column()
+  @Column({ nullable: true })
   description: string;
 
   @Column()
   alarm_date: Date;
 
-  @Column()
-  alarm_frequency: Date;
+  @Column({ default: 2 })
+  alarm_frequency: number;
 }
